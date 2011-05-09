@@ -27,6 +27,16 @@ public class ResourceFileLoader {
 
 	/**
 	 * @param location
+	 * @return The {@link File} Resource
+	 * @throws URISyntaxException
+	 */
+	public static File readFile(final String location) throws URISyntaxException {
+		return new File(Resources.getResource(location)
+			.toURI());
+	}
+
+	/**
+	 * @param location
 	 * @return String the complete loaded file
 	 * @throws IOException
 	 * @throws URISyntaxException
